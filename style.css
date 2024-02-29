@@ -1,9 +1,14 @@
-body{
+*{
+    padding: 0;
     margin: 0;
+    box-sizing: border-box;
+}
+body{
     background-color: #f9eeff;
-    background-image: url("assets/images/background-pattern-desktop.svg");
-    background-repeat: no-repeat ;
-
+    background-image: url("assets/images/background-pattern-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    min-height: 100vh;
 }
 .container{
     display: flex;
@@ -18,7 +23,7 @@ body{
     cursor: pointer;
 }
 .content{
-    padding: 3%;
+    padding: 1.5rem;
     border-radius: 2%;
     background-color: white;
     max-width: 400px;
@@ -29,13 +34,15 @@ body{
     flex-direction: column;
 }
 .questions{
+    padding: 3%;
     background-color: white;
     border:0;
     display: flex;
     flex-direction: row;
     width: 100%;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(90, 90, 90);
     justify-content: space-between;
+    align-items: center;
 }
 .ques{
     cursor: pointer;
@@ -47,11 +54,12 @@ body{
 }
 .details{
     color: #9b8d9d;
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 200ms ease;
 }
-@media screen and (max-width:480px) {
+@media screen and (min-width:540px) {
     body{
-        background-image: url("assets/images/background-pattern-mobile.svg");
-        background-size: contain;
+        background-image: url("assets/images/background-pattern-desktop.svg");
     }
 }
